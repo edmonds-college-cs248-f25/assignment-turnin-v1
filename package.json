@@ -1,0 +1,13 @@
+{
+  "name": "fullstack-starter",
+  "version": "1.0.0",
+  "description": "Starter template for CS 248 full-stack projects (Express server + static client).",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
+
