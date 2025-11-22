@@ -11,6 +11,17 @@
     <main>
       <h1>Fullstack Starter</h1>
       <p id="status">Loading message from the server...</p>
+      <form id="submissionForm" method="POST" action="/submit">
+        <label>Name:<input id="name" name="name"></label>
+        <label>Email:<input id="email" name="email"></label>
+        <label>Assignment Number:<select id="assignmentNumber"  name="assignmentNumber">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        </select></label>
+        <label>Submission:<textarea id="submission" name="submission"></textarea></label>
+        <button id="submitButton">Submit</button>
+      </form>
+      <button id="submitJSONButton">Submit via JSON</button>
     </main>
   </body>
 </html>

@@ -1,5 +1,27 @@
 // Called after HTML is parsed because index.html uses <script defer>
+
 function init() {
+  function handleClick()
+  {
+    console.log("Handle Click Here");
+    let submission = document.getElementById("submission").value;
+    let email = document.getElementById("email").value;
+    let name = document.getElementById("name").value;
+    let assignmentNumber = document.getElementById("assignmentNumber").value;
+
+    //window.alert("Clicked!");
+    console.log(submission);
+    console.log(email);
+    console.log(name);
+    console.log(assignmentNumber);
+
+  }
+  document.getElementById("submitJSONButton").addEventListener("click", handleClick);
+
+}
+init();
+
+/* function init() {
   const statusEl = document.getElementById("status");
 
   fetch("/api/example")
@@ -19,6 +41,7 @@ function init() {
 }
 
 init();
+*/
 
   // --------------------------------------------------------
   // Commented-out examples showing common patterns.

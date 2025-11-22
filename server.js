@@ -23,6 +23,9 @@
 
 
 import express from "express";
+import fs from "fs";
+
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -30,9 +33,27 @@ const PORT = process.env.PORT || 3000;
 // Serve static client files
 app.use(express.static("public"));
 
+app.use(express.urlencoded({ extended: true })); // for simple HTML form POST
+
 // Example API endpoint
+/*
 app.get("/api/example", (req, res) => {
   res.json({ message: "Hello from your API!" });
+});
+*/
+
+// Simple HTML form POST endpoint
+app.post("/submit", (req, res) => {
+  console.log("Name: " + req.body.name); // DEBUG
+  try {
+     let filename = "data/" + req.body.name+"_"+req.body.email+"_"+req.body.assignmentNumber;
+     fs.writeFileSync(filename, req.body.submission, 'utf8');
+     console.log('File written successfully synchronously.');
+     res.send("Your submission was successfully saved, " + req.body.name);
+  } catch (err) {
+    console.error('An error occurred:', err);
+    res.send("Server failed to save your submission. Please try again");
+  }
 });
 
 app.listen(PORT, () => console.log(`Server listening on ${PORT}`));
