@@ -2,26 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Fullstack Starter</title>
+    <title>Classic HTML Form</title>
     <link rel="stylesheet" href="style.css">
     <!-- defer = run app.js after HTML is parsed -->
     <script src="app.js" defer></script>
   </head>
   <body>
     <main>
-      <h1>Fullstack Starter</h1>
-      <p id="status">Loading message from the server...</p>
-      <form id="submissionForm" method="POST" action="/submit">
-        <label>Name:<input id="name" name="name"></label>
-        <label>Email:<input id="email" name="email"></label>
-        <label>Assignment Number:<select id="assignmentNumber"  name="assignmentNumber">
+      <h1>Classic HTML Form</h1>
+      <form id="submissionForm" method="POST" action="/submit"> <!-- id added for JS event handling for validation check -->
+        <label>Name:<input  name="name"></label>
+        <label>Email:<input id="email" name="email"></label> <!-- id added for JS validation -->
+        <label>Assignment Number:<select name="assignmentNumber">
         <option value="1">1</option>
         <option value="2">2</option>
         </select></label>
-        <label>Submission:<textarea id="submission" name="submission"></textarea></label>
-        <button id="submitButton">Submit</button>
+        <label>Submission:<textarea name="submission"></textarea></label>
+        <button>Submit</button>
       </form>
-      <button id="submitJSONButton">Submit via JSON</button>
     </main>
   </body>
 </html>
